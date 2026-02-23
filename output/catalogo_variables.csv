@@ -1,0 +1,8 @@
+ID_Tecnico,Nombre_amigable,Descripcion_funcional,Unidad,Tipo_dato,Rango_min,Rango_max,Distribucion_observada,Pregunta_planta
+1GEV007CE,potencia_activa,Potencia activa generada por la unidad,MW,float,263.56,272.11,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FSRFTB504,flujo_vapor_sobrecalentado_cuerpo_ap_turbina,Flujo de vapor sobrecalentado al cuerpo de alta presión de la turbina,t/h,float,774.38,788.41,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FSRTE502C,temp_vapor_sobrecalentado_despues_atemperador_izq,Temperatura del vapor sobrecalentado a la salida del atemperador izquierdo,°C,float,401.19,403.35,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FRSTE503A,temp_vapor_recalentado_salida_caldera,Temperatura del vapor recalentado a la salida de la caldera,°C,float,535.14,538.88,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FSRPT501,pres_domo,Presión del domo de la caldera,bar,float,171.45,174.16,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FSRPT504,pres_vap_sobrecal_a_turbina,Presión del vapor sobrecalentado a la entrada de la turbina,bar,float,165.28,166.8,Desconocida,"Frecuencia de muestreo?, Descripcion?"
+1FRSPT526,pres_vapor_entrada_recalentador,Presión del vapor de escape de la turbina de baja presión a la entrada del recalentador,bar,float,29.51,30.38,Desconocida,"Frecuencia de muestreo?, Descripcion?"

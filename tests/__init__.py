@@ -1,0 +1,1 @@
+from .tests import validar_catalogo
