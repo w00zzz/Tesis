@@ -34,15 +34,15 @@ def validar_reglas_dinamicas(df_datos, ruta_reglas):
                 resultados.append({
                     "Regla": regla["nombre"],
                     "Variable": col,
-                    "Estado": "❌ Error de Validez",
+                    "Estado": "Error de Validez",
                     "Detalle": regla["mensaje"]
                 })
             else:
                 resultados.append({
                     "Regla": regla["nombre"],
                     "Variable": col,
-                    "Estado": "✅ Válido",
-                    "Detalle": "Cumple condición"
+                    "Estado": "Valido",
+                    "Detalle": "Cumple condicion"
                 })
 
     return pd.DataFrame(resultados)

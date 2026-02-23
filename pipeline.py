@@ -20,23 +20,23 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "output/")
 REGLAS_VALIDEZ_PATH = os.getenv("REGLAS_VALIDEZ_PATH", "config/reglas_validacion.json")
 
 def run_pipeline():
-    print("🚀 Iniciando Pipeline Automatizado...")
+    print("START: Iniciando Pipeline Automatizado...")
 
     # A. Cargar o crear catálogo
     if os.path.exists(CATALOGO_PATH):
-        print(f"📖 Cargando catálogo desde: {CATALOGO_PATH}")
+        print(f"INFO: Cargando catálogo desde: {CATALOGO_PATH}")
         catalogo = pd.read_csv(CATALOGO_PATH)
     else:
-        print("💡 Catálogo no encontrado, cargando prototipo por defecto.")
+        print("INFO: Catálogo no encontrado, cargando prototipo por defecto.")
         catalogo = cargar_variables_prototipo()
 
     # B. Procesar estadísticas de datos reales (si la ruta existe)
     stats_reales = None
     if DATOS_REALES_PATH and os.path.exists(DATOS_REALES_PATH):
-        print(f"📊 Procesando datos reales: {DATOS_REALES_PATH}")
+        print(f"STATS: Procesando datos reales: {DATOS_REALES_PATH}")
         stats_reales = calcular_estadisticos_reales(DATOS_REALES_PATH)
     else:
-        print("⚠️ No se proporcionó ruta de datos reales o el archivo no existe. Usando simulación para demostración.")
+        print("WARN: No se proporcionó ruta de datos reales o el archivo no existe. Usando simulación para demostración.")
         # Simulación si no hay archivo real para que el pipeline no falle al probarlo
         stats_reales = pd.DataFrame([
             {"ID_Tecnico": "1GEV007CE", "Min_Muestra": -5.0, "Max_Muestra": 275.0}, # Activará regla de presión no negativa
@@ -58,7 +58,7 @@ def run_pipeline():
     # F. Exportar resultados finales
     output_excel = os.path.join(OUTPUT_DIR, "resultados_pipeline.xlsx")
     guardar_excel(reporte_rangos, output_excel, "Validacion_Rangos")
-    print(f"✅ Resultados exportados a: {output_excel}")
+    print(f"OK: Resultados exportados a: {output_excel}")
 
 if __name__ == "__main__":
     run_pipeline()

@@ -35,13 +35,13 @@ def validar_rangos_operativos(df_catalogo, df_muestra_stats=None):
             fuera_alto = max_obs > r_max_esp
             
             if fuera_bajo and fuera_alto:
-                estado = "⚠️ Fuera de rango (Ambos extremos)"
+                estado = "FUERA: Fuera de rango (Ambos extremos)"
             elif fuera_bajo:
-                estado = "⚠️ Bajo el mínimo esperado"
+                estado = "BAJO: Bajo el minimo esperado"
             elif fuera_alto:
-                estado = "⚠️ Sobre el máximo esperado"
+                estado = "ALTO: Sobre el maximo esperado"
             else:
-                estado = "✅ Dentro de rango"
+                estado = "OK: Dentro de rango"
                 
             # Placeholder para métrica de severidad
             desviacion = "Cálculo pendiente (Métrica de severidad)"

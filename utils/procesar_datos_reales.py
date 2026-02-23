@@ -13,10 +13,10 @@ def calcular_estadisticos_reales(ruta_csv, chunksize=100000):
         pd.DataFrame: Estadísticos calculados [ID_Tecnico, Min_Muestra, Max_Muestra].
     """
     if not os.path.exists(ruta_csv):
-        print(f"⚠️ Archivo de datos reales no encontrado: {ruta_csv}")
+        print(f"WARN: Archivo de datos reales no encontrado: {ruta_csv}")
         return None
 
-    print(f"🔄 Procesando datos reales en trozos de {chunksize} filas...")
+    print(f"INFO: Procesando datos reales en trozos de {chunksize} filas...")
     
     # Usaremos un diccionario para ir acumulando los mínimos y máximos globales
     global_min = {}
@@ -50,5 +50,5 @@ def calcular_estadisticos_reales(ruta_csv, chunksize=100000):
         return resumen
 
     except Exception as e:
-        print(f"❌ Error al procesar estadísticos dinámicos: {e}")
+        print(f"ERROR: No se pudieron procesar estadísticos dinámicos: {e}")
         return None
