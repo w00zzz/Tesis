@@ -1,17 +1,3 @@
-# Sistema de Validación y Calidad de Datos SCADA (Tesis)
-
-Este proyecto es el motor de procesamiento y validación de datos para mi tesis. Proporciona una infraestructura modular para cargar datos SCADA, validar rangos operativos técnicos y aplicar reglas de negocio dinámicas para asegurar la calidad de la información.
-
-## Características Principales
-
-- **Procesamiento de Big Data**: Carga eficiente de archivos CSV/Excel de gran tamaño mediante lectura por trozos (chunks).
-- **Validación Dual**:
-  - **Rangos Técnicos**: Comparación automática de valores observados contra el catálogo de especificaciones del fabricante.
-  - **Reglas de Negocio**: Sistema de validación dinámica basado en JSON para evaluar consistencia y validez lógica.
-- **Informe de Calidad**: Cálculo de métricas de completitud, nulos, unicidad y detección de duplicados.
-- **Configuración Robusta**: Uso de variables de entorno (`.env`) para gestionar rutas sin modificar el código.
-- **Visualización Pro**: Salida por consola formateada en tablas elegantes y exportación de reportes a Excel.
-
 ## Estructura del Proyecto
 
 - `utils/`: Módulos de lógica (Carga, procesamiento, validación, estadísticas).
@@ -49,6 +35,12 @@ uv run pipeline.py
 ```
 
 Esto generará un reporte detallado en el terminal y exportará un archivo Excel en la carpeta `output/`.
+
+O de forma manual ejecutando el main para probar:
+
+```bash
+uv run main.py
+```
 
 ## Esquema de Datos
 
