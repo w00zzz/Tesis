@@ -1,20 +1,17 @@
-from utils import cargar_variables_prototipo, printdf, guardar_excel, cargar_excel
+from utils import cargar_variables_prototipo, printdf, generar_informe_calidad
 
 def main():
-    # 1. Cargar variables del prototipo (diccionario interno)
+    # 1. Cargar datos
     catalogo = cargar_variables_prototipo()
 
-    # 2. Guardar en Excel
-    ruta_excel = "output/catalogo_variables.xlsx"
-    if guardar_excel(catalogo, ruta_excel):
-        print(f"✅ Archivo guardado correctamente en: {ruta_excel}")
+    # 2. Mostrar datos originales
+    printdf(catalogo, "Catálogo de Variables")
 
-    # 3. Cargar desde Excel
-    df_excel = cargar_excel(ruta_excel)
+    # 3. Generar informe de calidad
+    informe = generar_informe_calidad(catalogo, "Control de Calidad - Prototipo")
     
-    # 4. Mostrar usando la tabla bonita
-    if df_excel is not None:
-        printdf(df_excel, "Catálogo cargado desde Excel")
+    # 4. Mostrar el informe resultante usando la tabla bonita
+    printdf(informe, "Informe de Calidad de Datos")
 
 if __name__ == "__main__":
     main()
