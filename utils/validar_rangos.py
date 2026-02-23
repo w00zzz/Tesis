@@ -19,18 +19,16 @@ def validar_rangos_operativos(df_catalogo, df_muestra_stats=None):
         r_min_esp = row['Rango_min']
         r_max_esp = row['Rango_max']
         
-        # Placeholder para datos de muestra si no se proporcionan
         min_obs = "N/A"
         max_obs = "N/A"
         estado = "Sin datos de muestra"
-        desviacion = "Pendiente" # Placeholder para cálculo de % fuera de rango
+        desviacion = "Pendiente"
         
         if df_muestra_stats is not None and id_tec in df_muestra_stats['ID_Tecnico'].values:
             stats = df_muestra_stats[df_muestra_stats['ID_Tecnico'] == id_tec].iloc[0]
             min_obs = stats['Min_Muestra']
             max_obs = stats['Max_Muestra']
             
-            # Lógica de validación básica
             fuera_bajo = min_obs < r_min_esp
             fuera_alto = max_obs > r_max_esp
             
@@ -43,7 +41,6 @@ def validar_rangos_operativos(df_catalogo, df_muestra_stats=None):
             else:
                 estado = "OK: Dentro de rango"
                 
-            # Placeholder para métrica de severidad
             desviacion = "Cálculo pendiente (Métrica de severidad)"
             
         validaciones.append({
@@ -53,7 +50,7 @@ def validar_rangos_operativos(df_catalogo, df_muestra_stats=None):
             "Min_Observado": min_obs,
             "Max_Observado": max_obs,
             "Estado_Rango": estado,
-            "Analisis_Severidad": desviacion # Placeholder
+            "Analisis_Severidad": desviacion
         })
         
     return pd.DataFrame(validaciones)

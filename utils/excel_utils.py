@@ -35,7 +35,6 @@ def guardar_excel(df, ruta_archivo, nombre_hoja="Datos"):
         bool: True si se guardó correctamente, False de lo contrario.
     """
     try:
-        # Asegurar que el directorio existe
         directorio = os.path.dirname(ruta_archivo)
         if directorio and not os.path.exists(directorio):
             os.makedirs(directorio)
