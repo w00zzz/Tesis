@@ -1,4 +1,6 @@
+import os
 import pandas as pd
+from dotenv import load_dotenv
 from utils import (
     cargar_variables_prototipo, 
     printdf, 
@@ -6,8 +8,17 @@ from utils import (
     validar_rangos_operativos
 )
 
+# Cargar variables de entorno
+load_dotenv()
+
 def main():
-    catalogo = cargar_variables_prototipo()
+    # Uso de variables de entorno para rutas (Opcional, tiene fallbacks)
+    catalogo_path = os.getenv("CATALOGO_PATH")
+    
+    if catalogo_path and os.path.exists(catalogo_path):
+        catalogo = pd.read_csv(catalogo_path)
+    else:
+        catalogo = cargar_variables_prototipo()
 
     datos_muestra = pd.DataFrame([
         {"ID_Tecnico": "1GEV007CE", "Min_Muestra": 260.00, "Max_Muestra": 275.00},
@@ -17,8 +28,8 @@ def main():
 
     reporte_rangos = validar_rangos_operativos(catalogo, datos_muestra)
 
-    printdf(catalogo, "Catálogo de Variables (Rangos Técnicos)")
-    printdf(reporte_rangos, "Validación: Rangos Esperados vs Observados")
+    printdf(catalogo, "Catálogo de Variables (Actualizado via ENV)")
+    printdf(reporte_rangos, "Validación de Rangos")
 
     informe_calidad = generar_informe_calidad(catalogo, "Análisis de Catálogo")
     printdf(informe_calidad, "Informe de Calidad")

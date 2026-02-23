@@ -1,0 +1,31 @@
+{
+    "reglas_validez": [
+        {
+            "nombre": "Presión no negativa",
+            "columnas": [
+                "pres_domo",
+                "pres_vap_sobrecal_a_turbina",
+                "pres_vapor_entrada_recalentador"
+            ],
+            "condicion": ">= 0",
+            "mensaje": "La presión no puede ser un valor negativo."
+        },
+        {
+            "nombre": "Temperatura de diseño",
+            "columnas": [
+                "temp_vapor_sobrecalentado_despues_atemperador_izq",
+                "temp_vapor_recalentado_salida_caldera"
+            ],
+            "condicion": "<= 650",
+            "mensaje": "La temperatura excede el límite crítico de diseño."
+        }
+    ],
+    "reglas_consistencia": [
+        {
+            "nombre": "Turbina apagada - Potencia cero",
+            "descripcion": "Si el flujo de vapor es muy bajo, la potencia debe ser cercana a cero.",
+            "logica": "flujo_vapor_sobrecalentado_cuerpo_ap_turbina < 10 => potencia_activa < 1",
+            "mensaje": "Inconsistencia: Existe potencia con flujo de vapor insuficiente."
+        }
+    ]
+}

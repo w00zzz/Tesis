@@ -4,3 +4,5 @@ from .cargar_csv import cargar_csv
 from .excel_utils import cargar_excel, guardar_excel
 from .informe_calidad import generar_informe_calidad
 from .validar_rangos import validar_rangos_operativos
+from .procesar_datos_reales import calcular_estadisticos_reales
+from .validador_reglas import validar_reglas_dinamicas
