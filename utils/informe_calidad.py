@@ -22,10 +22,9 @@ def generar_informe_calidad(df, nombre_dataset="Dataset"):
         tipo_dato = df[col].dtype
         unicos = df[col].nunique()
         
-        # Métricas de calidad (Placeholders para lógica futura)
         completitud = 100 - porcentaje_nulos
-        consistencia = "Pendiente de implementar" # Placeholder
-        validez = "Pendiente de implementar"      # Placeholder
+        consistencia = "Pendiente de implementar"
+        validez = "Pendiente de implementar"
         
         informe.append({
             "Columna": col,
@@ -40,7 +39,6 @@ def generar_informe_calidad(df, nombre_dataset="Dataset"):
     
     resumen_df = pd.DataFrame(informe)
     
-    # Imprimir resumen general en consola (opcionalmente podrías devolver esto también)
     print(f"\n--- Resumen de Calidad: {nombre_dataset} ---")
     print(f"Total de registros: {total_filas}")
     print(f"Filas duplicadas: {duplicados}")

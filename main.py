@@ -8,11 +8,9 @@ from utils import (
     validar_rangos_operativos
 )
 
-# Cargar variables de entorno
 load_dotenv()
 
 def main():
-    # Uso de variables de entorno para rutas (Opcional, tiene fallbacks)
     catalogo_path = os.getenv("CATALOGO_PATH")
     
     if catalogo_path and os.path.exists(catalogo_path):
