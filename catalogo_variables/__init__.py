@@ -1,2 +1,0 @@
-from .catalogo_variables import crear_catalogo_base
-from .cargar_variables_prototipo import cargar_variables_prototipo
