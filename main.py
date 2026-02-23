@@ -1,16 +1,20 @@
-from utils import cargar_variables_prototipo
-from utils import printdf
-from utils import cargar_csv
+from utils import cargar_variables_prototipo, printdf, guardar_excel, cargar_excel
 
 def main():
-    # catalogo2 = cargar_variables_prototipo()
+    # 1. Cargar variables del prototipo (diccionario interno)
+    catalogo = cargar_variables_prototipo()
 
-    # printdf(catalogo2, "Catalogo de Variables")
+    # 2. Guardar en Excel
+    ruta_excel = "output/catalogo_variables.xlsx"
+    if guardar_excel(catalogo, ruta_excel):
+        print(f"✅ Archivo guardado correctamente en: {ruta_excel}")
+
+    # 3. Cargar desde Excel
+    df_excel = cargar_excel(ruta_excel)
     
-    # catalogo2.to_csv("output/catalogo_variables.csv", index=False)
-    csv = cargar_csv("output/catalogo_variables.csv")
-    printdf(csv, "Catalogo de Variables")
-
+    # 4. Mostrar usando la tabla bonita
+    if df_excel is not None:
+        printdf(df_excel, "Catálogo cargado desde Excel")
 
 if __name__ == "__main__":
     main()
