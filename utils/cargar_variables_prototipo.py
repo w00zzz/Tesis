@@ -63,7 +63,7 @@ def cargar_variables_prototipo():
             "Descripcion_funcional": "Presión del vapor de entrada, determinando los esfuerzos mecánicos y el riesgo de fallo en los componentes",
             "Unidad": "bar",
             "Tipo_dato": "float",
-            "Rango_min": 165.28,
+            "Rango_min": 164.26,
             "Rango_max": 166.80,
             "Distribucion_observada": "Distribución multimodal, asimétrica negativa (cola izquierda), colas largas (leptocúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
