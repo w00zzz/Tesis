@@ -10,7 +10,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 263.56,
             "Rango_max": 272.11,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, aproximadamente simétrica, colas cortas (platicúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -21,7 +21,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 774.38,
             "Rango_max": 788.41,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, asimétrica negativa (cola izquierda), colas largas (leptocúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -32,7 +32,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 401.19,
             "Rango_max": 403.35,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, aproximadamente simétrica, colas cortas (platicúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -43,7 +43,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 535.14,
             "Rango_max": 538.88,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, aproximadamente simétrica, colas cortas (platicúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -54,7 +54,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 171.45,
             "Rango_max": 174.16,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, asimétrica negativa (cola izquierda), colas largas (leptocúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -65,7 +65,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 165.28,
             "Rango_max": 166.80,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, asimétrica negativa (cola izquierda), colas largas (leptocúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         },
         {
@@ -76,7 +76,7 @@ def cargar_variables_prototipo():
             "Tipo_dato": "float",
             "Rango_min": 29.51,
             "Rango_max": 30.38,
-            "Distribucion_observada": "Desconocida",
+            "Distribucion_observada": "Distribución multimodal, aproximadamente simétrica, colas cortas (platicúrtica), baja dispersión",
             "Pregunta_planta": "Frecuencia de muestreo?, Descripcion?"
         }
     ]
