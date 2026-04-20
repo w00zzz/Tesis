@@ -94,7 +94,6 @@ def run_pipeline(usar_datos_reales=True, generar_simulacion=False):
 
 
 def get_stats_from_csv(datos_df):
-    """Calcula estadísticas de un DataFrame de datos reales."""
     stats_list = []
     for col in datos_df.columns:
         if col == "ID_Tecnico":

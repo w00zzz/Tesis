@@ -6,7 +6,6 @@ from typing import Dict, Optional
 
 
 class DistribucionEstadistica(ABC):
-    """Interfaz para distribuciones de probabilidad."""
 
     @abstractmethod
     def ajustar(self, datos: pd.Series) -> Dict:
@@ -214,7 +213,6 @@ FABRICA_DISTRIBUCIONES = {
 
 
 def crear_distribucion(nombre: str, **kwargs) -> DistribucionEstadistica:
-    """Fabrica de distribuciones."""
     if nombre not in FABRICA_DISTRIBUCIONES:
         raise ValueError(f"Distribucion no reconocida: {nombre}")
     return FABRICA_DISTRIBUCIONES[nombre](**kwargs)

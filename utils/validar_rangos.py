@@ -1,17 +1,6 @@
 import pandas as pd
 
 def validar_rangos_operativos(df_catalogo, df_muestra_stats=None):
-    """
-    Compara los rangos técnicos/esperados del catálogo con los rangos observados en una muestra.
-    
-    Args:
-        df_catalogo (pd.DataFrame): El catálogo con 'Rango_min' y 'Rango_max'.
-        df_muestra_stats (pd.DataFrame, opcional): Estadísticas de la muestra 
-                                                 (debe tener 'ID_Tecnico', 'Min_Muestra', 'Max_Muestra').
-        
-    Returns:
-        pd.DataFrame: Un reporte de validación de rangos.
-    """
     validaciones = []
     
     for _, row in df_catalogo.iterrows():

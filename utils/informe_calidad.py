@@ -1,16 +1,7 @@
 import pandas as pd
 
 def generar_informe_calidad(df, nombre_dataset="Dataset"):
-    """
-    Genera un informe básico de calidad de datos con placeholders para métricas avanzadas.
-    
-    Args:
-        df (pd.DataFrame): El DataFrame a analizar.
-        nombre_dataset (str): Nombre descriptivo para el informe.
-        
-    Returns:
-        pd.DataFrame: Un resumen de calidad por columna.
-    """
+
     informe = []
     
     total_filas = len(df)

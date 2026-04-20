@@ -20,7 +20,6 @@ DATOS_DEFAULT = "input/datos_planta.csv"
 
 
 def get_stats_from_csv(datos_df):
-    """Calcula estadísticas de un DataFrame de datos reales."""
     stats_list = []
     for col in datos_df.columns:
         valores = datos_df[col].dropna()
@@ -38,7 +37,6 @@ def get_stats_from_csv(datos_df):
 
 
 def prueba_rapida():
-    """Prueba rápida con datos reales del CSV."""
     catalogo = cargar_variables_prototipo()
     simulador = SimuladorTurbina(catalogo_df=catalogo, phi_default=0.7)
     datos = pd.read_csv(DATOS_DEFAULT)
@@ -54,7 +52,6 @@ def prueba_rapida():
 
 
 def prueba_distribuciones():
-    """Ajusta distribuciones con datos reales."""
     catalogo = cargar_variables_prototipo()
     simulador = SimuladorTurbina(catalogo_df=catalogo)
     datos = pd.read_csv(DATOS_DEFAULT)
@@ -65,7 +62,6 @@ def prueba_distribuciones():
 
 
 def prueba_simulacion(generar_nuevos=False):
-    """Genera simulación o muestra stats de datos reales."""
     catalogo = cargar_variables_prototipo()
     simulador = SimuladorTurbina(catalogo_df=catalogo)
     datos = pd.read_csv(DATOS_DEFAULT)
@@ -83,7 +79,6 @@ def prueba_simulacion(generar_nuevos=False):
 
 
 def prueba_histogramas():
-    """Genera histogramas con datos reales."""
     print(f"Generando histogramas con datos de: {DATOS_DEFAULT}")
     ejecutar_analisis_distribuciones()
 
