@@ -1,9 +1,6 @@
 import pandas as pd
 
-
 def cargar_variables_prototipo():
-    """Carga el catalogo prototipo de variables SCADA y propiedades de materiales."""
-
     datos = [
         {
             "ID_Tecnico": "1GEV007CE",

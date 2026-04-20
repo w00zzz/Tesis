@@ -5,7 +5,6 @@ import operator
 
 
 def cargar_reglas(ruta_json):
-    """Carga las reglas desde el archivo JSON."""
     if not os.path.exists(ruta_json):
         return {"reglas_validez": [], "reglas_consistencia": []}
     with open(ruta_json, 'r', encoding='utf-8') as f:
@@ -23,7 +22,6 @@ OPERADORES = {
 
 
 def _parsear_condicion(condicion_str):
-    """Parsea una condicion tipo '>= 0' en (operador, valor)."""
     condicion_str = condicion_str.strip()
     for op_str, op_func in OPERADORES.items():
         if condicion_str.startswith(op_str):
@@ -36,13 +34,11 @@ def _parsear_condicion(condicion_str):
 
 
 def _verificar_condicion(valor, condicion_str):
-    """Verifica si un valor cumple una condicion usando operadores seguros."""
     op_func, umbral = _parsear_condicion(condicion_str)
     return op_func(valor, umbral)
 
 
 def validar_reglas_dinamicas(df_datos, ruta_reglas):
-    """Aplica reglas de validez y consistencia sobre un DataFrame."""
     reglas = cargar_reglas(ruta_reglas)
     resultados = []
 
@@ -132,7 +128,6 @@ def validar_reglas_dinamicas(df_datos, ruta_reglas):
 
 
 def _evaluar_regla_consistencia(df_datos, logica_str):
-    """Evalua una regla de consistencia tipo 'var1 < val => var2 < val'."""
     if "=>" not in logica_str:
         raise ValueError(f"Formato invalido, debe contener '=>': '{logica_str}'")
 
@@ -159,7 +154,6 @@ def _evaluar_regla_consistencia(df_datos, logica_str):
 
 
 def _parsear_expresion(expresion):
-    """Parsea 'variable < 10' en (variable, operador, valor)."""
     for op_str in OPERADORES.keys():
         if op_str in expresion:
             partes = expresion.split(op_str, 1)

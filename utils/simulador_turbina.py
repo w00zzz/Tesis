@@ -11,11 +11,6 @@ from utils.distribuciones import (
 
 
 class ModeloAR1:
-    """Modelo Autorregresivo de Orden 1.
-
-    Ecuacion: X_t = mu + phi * (X_{t-1} - mu) + epsilon_t
-    Varianza del ruido: sigma_epsilon^2 = sigma_X^2 * (1 - phi^2)
-    """
 
     def __init__(self, mu: float, sigma: float, phi: float = 0.7):
         if not (0 < phi < 1):
@@ -43,11 +38,6 @@ class ModeloAR1:
 
 
 class SimuladorTurbina:
-    """Simulador de datos de sensores para turbina de vapor.
-
-    Basado en metodo Carga-Resistencia y caracterizacion estadistica
-    de datos historicos SCADA.
-    """
 
     def __init__(
         self,

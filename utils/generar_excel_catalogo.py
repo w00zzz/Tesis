@@ -1,4 +1,3 @@
-"""Genera el catalogo de variables en formato Excel como entregable de la Tarea 1."""
 import pandas as pd
 import os
 

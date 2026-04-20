@@ -2,16 +2,7 @@ import pandas as pd
 import os
 
 def calcular_estadisticos_reales(ruta_csv, chunksize=100000):
-    """
-    Lee un archivo CSV grande por trozos (chunks) y calcula min/max agrupado por ID_Tecnico.
-    
-    Args:
-        ruta_csv (str): Ruta al archivo de datos reales.
-        chunksize (int): Cantidad de filas a leer por vez para no saturar la RAM.
-        
-    Returns:
-        pd.DataFrame: Estadísticos calculados [ID_Tecnico, Min_Muestra, Max_Muestra].
-    """
+
     if not os.path.exists(ruta_csv):
         print(f"WARN: Archivo de datos reales no encontrado: {ruta_csv}")
         return None
