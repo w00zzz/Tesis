@@ -13,6 +13,7 @@ from utils import (
 from utils.analisis_distribuciones import (
     ejecutar_analisis as ejecutar_analisis_distribuciones,
 )
+from utils.generar_informe_pdf import generar_informe_pdf
 
 load_dotenv()
 
@@ -83,6 +84,11 @@ def prueba_histogramas():
     ejecutar_analisis_distribuciones()
 
 
+def prueba_pdf():
+    print("Generando informe PDF con histogramas...")
+    generar_informe_pdf()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Simulador de Turbina de Vapor")
     parser.add_argument(
@@ -96,11 +102,16 @@ def main():
     parser.add_argument(
         "--histogramas", action="store_true", help="Generar histogramas"
     )
+    parser.add_argument(
+        "--pdf", action="store_true", help="Generar informe PDF con histogramas"
+    )
     parser.add_argument("--datos", action="store_true", help="Ver datos reales y stats")
     args = parser.parse_args()
 
     if args.histogramas:
         prueba_histogramas()
+    elif args.pdf:
+        prueba_pdf()
     elif args.simulacion:
         prueba_simulacion(generar_nuevos=True)
     elif args.distribuciones:

@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from datetime import datetime
 
 try:
     from fpdf import FPDF
@@ -18,7 +17,6 @@ class InformePDF(FPDF):
         self.set_font("Helvetica", "B", 10)
         self.set_text_color(100, 100, 100)
         self.cell(0, 8, "Simulador de Turbina de Vapor - Semana 2", 0, 0, "L")
-        self.cell(0, 8, datetime.now().strftime("%Y-%m-%d"), 0, 1, "R")
         self.line(10, 13, 200, 13)
         self.ln(5)
 
