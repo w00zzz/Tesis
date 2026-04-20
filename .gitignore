@@ -49,4 +49,14 @@ Thumbs.db
 
 # Project specifics
 .python-version
-# .agent/ # Uncomment if you use local agent configs
+
+# Diagramas (solo subir imagenes generadas)
+diagramas/*.puml
+diagramas/plantuml.jar
+diagramas/README.md
+
+# Virtual Environment
+.venv/
+
+# Python cache
+__pycache__/
