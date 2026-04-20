@@ -31,12 +31,6 @@ Este comando:
 5. Valida rangos y reglas
 6. Genera Excel de resultados
 
-### Generar PDF con histogramas
-```bash
-uv run python -c "from utils.generar_informe_pdf import generar_informe_pdf; generar_informe_pdf()"
-```
-Archivo: `output/informe_semana2.pdf`
-
 ### Main (opciones)
 ```bash
 # Ver stats de datos
@@ -47,6 +41,9 @@ uv run main.py --histogramas
 
 # Generar simulación
 uv run main.py --simulacion
+
+# Generar PDF con histogramas
+uv run main.py --pdf
 ```
 
 ## Archivos Generados
