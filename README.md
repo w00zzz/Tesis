@@ -64,9 +64,3 @@ En `diagramas/`:
 | `clases_actual.png` | Diagrama de clases |
 | `secuencia_actual.png` | Diagrama de secuencia |
 
-Para regenerar (requiere PlantUML + Graphviz):
-```bash
-cd diagramas
-java -jar plantuml.jar -tpng -pipe < diagrama_clases_uml.puml > clases_actual.png
-java -jar plantuml.jar -tpng -pipe < diagrama_secuencia_uml.puml > secuencia_actual.png
-```
